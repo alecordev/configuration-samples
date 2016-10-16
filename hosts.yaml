@@ -1,0 +1,7 @@
+hosts:
+  - hostname: hostname.com
+    port: 22
+    class: class-name
+  - hostname: hostname1.com
+    port: 22
+    class: class-name-2

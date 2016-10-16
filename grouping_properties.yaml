@@ -1,0 +1,33 @@
+level0:
+  level1:
+    key1: value1
+    key2: value2
+    key3:
+      - val1
+      - val2
+    key4: >
+          Multi line value
+          for key4. # comment not recognized
+    literal_block: |
+      This entire block of text will be the value of the 'literal_block' key,
+      with line breaks being preserved.
+
+      The literal continues until de-dented, and the leading indentation is
+      stripped.
+
+          Any lines that are 'more-indented' keep the rest of their indentation -
+          these lines will be indented by 4 spaces.
+  level2: &anchorlevel2
+    key1: level2key1 # comment
+    key2: level2key2
+  level3: 
+    <<: *anchorlevel2
+  level4:
+    base: &base
+      name: Value
+    foo: &foo
+      <<: *base
+      age: 10
+    bar: &bar
+      <<: *base
+      age: 20
